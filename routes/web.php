@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
     */
 Route::get('/', function () {
     Log::info("Get /");
+    Log::info('Welcome page visited');
     $startTime = microtime(true);
     // Simple cache-aside logic
     if (Cache::has('tasks')) {
