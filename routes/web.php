@@ -21,8 +21,8 @@ use Illuminate\Http\Request;
     */
 Route::get('/', function () {
     Log::info("Get /");
-    Log::info("Hello from Aftab")'
-    '
+    Log::info("Hello from Aftab");
+    
     $startTime = microtime(true);
     // Simple cache-aside logic
     if (Cache::has('tasks')) {
