@@ -21,6 +21,8 @@ use Illuminate\Http\Request;
     */
 Route::get('/', function () {
     Log::info("Get /");
+    Log::info("Hello from Aftab")'
+    '
     $startTime = microtime(true);
     // Simple cache-aside logic
     if (Cache::has('tasks')) {
@@ -49,12 +51,14 @@ Route::post('/task', function (Request $request) {
             ->withErrors($validator);
     }
 
+
     $task = new Task;
     $task->name = $request->name;
     $task->save();
     // Clear the cache
     Cache::flush();
 
+    Log::info("Task was successfully added!");
     return redirect('/');
 });
 
